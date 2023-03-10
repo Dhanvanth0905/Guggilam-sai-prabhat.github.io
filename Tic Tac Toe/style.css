@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin:0;
+}
+:root {
+    --orange: #e18624;
+    --winning-blocks: #52525548;
+}
+body {
+    color: var(--orange);
+    font-family: 'finger paint',cursive;
+    background-image:url(https://w0.peakpx.com/wallpaper/82/215/HD-wallpaper-cartoon-dark-black-simple.jpg) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* opacity: 0.5; */
+    
+
+}
+img{
+    opacity: 0.4;
+}
+h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+.container{
+    padding: 40px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: #000000; */
+}
+#gameboard{
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    color: var(--orange);
+    font-size: 120px;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+}
+.box:nth-child(3n) {
+    border-right: none;
+}
+.box:nth-child(6) ~ .box {
+    border-bottom: none;
+}
+button{
+   
+    padding: 10px 20px;
+    border-radius: 11px;
+    background-color:var(--orange);
+    color: #101010;
+    border-color: #e18624;
+    font-size: 18px;
+    transition: 200ms transform;
+    font-weight: 600;
+   
+
+
+}
+button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+.container button{
+    float: left;
+    margin: 2px;
+}
