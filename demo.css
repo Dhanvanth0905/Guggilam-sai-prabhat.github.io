@@ -130,15 +130,16 @@ h3{
     margin: 20px;
     visibility: hidden;
     opacity: 0;
+    transition: .5s;
 
 }
 
-/* .thumbnail {
+.thumbnail {
     margin: 50px;
-    height: 150px;
+    height: 240px;
     box-shadow: 5px 5px 20px black;
     overflow: hidden;
-} */
+}
 .thumbnail img{
     height: 240px;
     width: 450px;
@@ -175,6 +176,9 @@ h3{
     opacity: 1;
     visibility: visible;
 }
+.thumbnail:hover img{
+    transform: scale(1.0) rotate(-3deg);
+}
 
 
 
@@ -206,6 +210,9 @@ h3{
     }
 
   }
+ 
+
+  
  
 
   
