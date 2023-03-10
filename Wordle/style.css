@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html, body{
+    height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#container{
+    display: flex;
+    background-color: black;
+    /* background: url("https://media4.giphy.com/media/KZFrf9JusXzmpnPsT6/…u4l9f1rua82nz1l5p9fmwv1oxah4bn&rid=200w.webp&ct=g"); */
+    background: url("https://media.tenor.com/erbfpVT0mPUAAAAC/red-and-black-red.gif");
+    /* filter: blur(5px); */
+    /* filter: sepia(100%); */
+    background-size: cover;
+    animation: play 2s infinite;
+    height:  100%;
+    flex-direction: column;
+    align-items: center;
+
+     
+}
+header{
+    border-bottom: 1px solid rgb(58, 58, 60);
+}
+.title{
+    color: rgb(210, 11, 11);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.4 rem 0 0.4rem 0;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transform: translate(-50%,-505);
+    text-shadow: 1px 1px 1px #919191,
+                
+                 1px 2px 1px #919191,
+                 1px 3px 1px #919191,
+                 1px 4px 1px #919191,
+                 1px 5px 1px #0c0c0c,
+                 1px 6px 1px #141414,
+                 1px 7px 1px #0a0a0a,
+                 1px 8px 1px #0a0a0a,
+                 1px 9px 1px #0c0c0c,
+                 1px 10px 1px #141414,
+                 1px 20px 40px rgba(0, 0, 0, 0.3); ;
+
+
+}
+#board-container{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-grow:  1;
+    overflow: hidden;
+}
+#board{
+    display: grid;
+    grid-template-columns: repeat(5 ,1fr);
+    grid-gap: 5px;
+    padding: 10PX;
+    box-sizing: border-box;
+}
+.square{
+     border: 2px solid rgb(164, 45, 45);
+     min-height: 50px;
+     min-width: 50px;
+     font-weight: bold;
+     font-size: 50px;
+     color: azure;
+     text-transform: uppercase;
+     display: flex;
+     justify-content: center;
+     align-content: center;
+
+}
+
+#keyboard-container{
+    height: 200px;
+}
+#game{
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.keyboard-row{
+    display: flex;
+    justify-content: center;
+   
+    margin: 0 auto 8px;
+    width: 100%;
+    touch-action: manipulation;
+}
+.keyboard-row button{
+    border: 0;
+    font-style: inherit;
+    font-weight: bold;
+    padding : 0;
+    height: 58px;
+    cursor: pointer;
+    background-color: rgb(227, 44, 15);
+    color: rgb(215, 218, 220);
+    flex-grow:1;
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.keyboard-row button.wide-button{
+    flex-grow: 1.5;
+}
+.spacer-half{
+    flex-grow: 1.5;
+
+}
+@keyframes play {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 100% 0;
+    }
+  }
