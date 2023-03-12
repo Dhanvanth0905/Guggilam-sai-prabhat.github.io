@@ -1,0 +1,314 @@
+:root{
+    --primary-color: #e50914;
+    --dark-color: #141414;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Arial',sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: black;
+    color : #999;
+
+}
+ul {
+    list-style: none;
+}
+
+h1 ,h3 ,h2 ,h4 {
+    color: #fff;
+
+} 
+a {
+    color : #fff; 
+    text-decoration: none; 
+}
+p{
+    margin: 0.5rem 0;
+}
+
+
+img{
+    width: 100%;
+}
+.showcase{
+    width: 100;
+    height:95vh;
+    position: relative;
+    background : url('https://i.ibb.co/vXqDmnh/background.jpg') no-repeat center center/cover; 
+}
+.showcase::after{
+    content: "";
+    position: absolute;
+    top :0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0,0, 0.6);
+    box-shadow: inset 110px 100px 250px #000000, inset -110px -100px 250px #000000;
+}
+
+
+.showcase-top{
+    position: relative;
+    z-index: 2;
+    height: 90px;
+}
+.showcase-top img {
+    width: 170px;
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+}
+.showcase-top a{
+    position: absolute;
+    top: 40;
+    right: 0;
+    bottom: 10;
+    transform: translate(-50%, -20% , -50%);
+
+    
+}
+.showcase-content{
+    position: relative;
+    z-index: 2;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center ;
+    margin-top: 9rem;
+}
+.showcase-content h1 {
+    font-weight: 700;
+    font-size: 5.2rem;
+    line-height: 1.1;
+    margin: 0 0 2rem;
+}
+.showcase-content p{
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.9rem;
+    line-height: 1.25;
+    margin: 0 0 2rem;
+}
+/*TABs*/
+.tabs{
+background: var(--dark-color);
+padding: 1rem;
+border-bottom: 3px solid #3d3d3d;
+
+}
+.tabs .container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.tabs p{
+    font-size: 1.2rem;
+    padding-top: 0.5rem ;
+
+}
+.tabs .container >div{
+    padding: 1.5rem 0;
+}
+.tabs .container >div:hover{
+    color: #fff;
+    cursor: pointer;
+}
+.tab-border{
+    border-bottom :#e50914 4px solid;
+}
+#tab-1-content .tab-content-1-inner{
+display: grid;
+grid-template-columns: repeat(2,1fr) ;
+grid-gap:2rem ;
+align-items: center;
+justify-content: center;
+}
+/*TABS CONTENT*/
+.tab-content{
+    padding:3rem 0 ;
+    background: #000000;
+    color: #fff;
+}
+ #tab-1-content,
+ #tab-2-content,
+ #tab-3-content{
+    display: none;
+ }
+ .show{
+    display: block !important;
+    opacity: 1 !important;
+    transition: all 1000 ease-in;
+ }
+
+#tab-2-content .tab-content-2-top{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap : 1rem;
+    align-items: center;
+    justify-content: center;
+
+
+}
+#tab-2-content .tab-content-2-bottom{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap : 2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+
+}
+/*TABLES*/
+.table{
+    width: 100%;
+    margin-top: 2rem;
+    border-spacing: 0;
+}
+.table thead th{
+    text-align: center;
+    padding: 0.8rem;
+}
+.table tbody tr td{
+    color: #999;
+    padding: 0.8rem 1.2rem;
+    text-align: center;
+}
+.table tbody tr td:first-child{
+    text-align: left;
+
+}
+.table tbody tr:nth-child(odd){
+    background-color: #222;
+}
+/*footer*/
+.foot{
+    max-width: 75%;
+    margin : 1rem auto;
+    overflow: auto;
+}
+.foot .foot a {
+    color: #999;
+    font-size: 0.8rem;
+
+
+}
+.foot .foot p{
+    margin-bottom: 1.5rem;
+}
+.foot .footer-cols{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:2rem;
+}
+.foot li{
+    line-height:1.9 ;
+}
+
+
+/*contianer*/
+.container{
+    max-width: 70%;
+    margin: auto;
+    overflow:hidden;
+    padding: 0 2rem;
+}
+/*Text style*/
+.text-xl{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color:#fff
+
+}
+.text-lg{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+
+}
+.text-dark{
+    color: #999;
+    
+}
+.text-center{
+    text-align: center;
+}
+.text-md{
+    font-size: 1.5rem ;
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+.btn {
+    display: inline-block;
+    background : var(--primary-color);
+    color : #fff ;
+    padding : 0.4rem  1.3rem;
+    font-size : 1rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    outline: none;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.45) ;
+    border-radius:2px ;
+
+
+
+}
+.btn:hover{
+    opacity: 0.9;
+}
+.btn-rounded{
+    border-radius: 5px;
+}
+.btn-lg{
+    font-size: 1rem;
+    padding: 0.8rem 1.3rem;
+    text-transform: uppercase;
+}
+.btn-xl{
+    font-size: 2rem;
+    padding: 1.5rem 2.1rem;
+    text-transform: uppercase;
+}
+@media(max-width: 700px){
+
+    .showcase::after{
+        background: rgba(0, 0,0, 0.6);
+        box-shadow: inset 80px 8px 250px #000000, inset -80px -80px 250px #000000;
+    }
+    #tab-1-content .tab-content-1-inner{
+        grid-template-columns: 1.2fr;
+        text-align: center;
+    }
+    #tab-2-content .tab-content-2-bottom{
+        
+        grid-template-columns: 1.2fr;
+      
+    }
+    #tab-2-content .tab-content-2-top{
+        display: block;
+        text-align: center;
+    }
+
+}
