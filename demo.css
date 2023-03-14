@@ -30,7 +30,7 @@ html {
 
 i:hover{
     transition: 0s ;
-    color: rgb(204, 0, 255);
+    color: #c8248c;
     box-shadow: 120px 0 120px rgb(204, 0, 255);
       
     
@@ -45,8 +45,8 @@ i:hover{
    } 
 #icons .row  div{
     
-    animation: animate 100s linear infinite;
-    animation-delay: -50s;
+    animation: animate 120s linear infinite;
+    animation-delay: -60s;
 }  
  /* #icons .row  div:nth-child(2){
     
@@ -82,12 +82,37 @@ i:hover{
 
 #home {
     padding: 20%;
-    background-image: radial-gradient(#404040, #202020);
+    background-image: url("anas-alshanti-feXpdV001o4-unsplash.jpg");
+    /* background-color: rgba(255, 0, 0, 0.1); */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    z-index: 1;
+    
 }
+#home::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .6;
+    z-index: -1;
+}
+/* #home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: -1;
+  } */
 #about{
     background-color: #fff;
 }
@@ -188,19 +213,55 @@ h3{
     background-image: radial-gradient(#404040, #202020);
 }
 
-.heading  {
-    animation: neon 1s ease-in-out infinite alternate;
+
+
+  #heading{
+   
+    position: relative;
+   
+    
+    color: #222;
+    /* font-size: 5em; */
+    font-weight: bolder;
+   
+    letter-spacing: 0.2rem;
   }
+ #heading::before{
+    content: attr(data-text);
+    position: absolute;
+    color: #c8248c;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid #fff;
+    animation: neon 8s linear infinite;
+    filter: drop-shadow(0 0 40px #d401d4) drop-shadow(0 0 70px  #c614c6);
+ }
+ @keyframes neon
+ {
+    0%,10%,100%
+    {
+        width: 0;
+
+    }
+    70%,90%
+    {
+        width: 100%;
+    }
+ }
+
+
   
-  @keyframes neon {
+  
+  /* @keyframes neon {
     from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #4A00E0, 0 0 70px #4A00E0, 0 0 80px #4A00E0, 0 0 100px #4A00E0;
+      text-shadow: 0 0 20px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #4A00E0, 0 0 70px #4A00E0, 0 0 80px #4A00E0, 0 0 100px #4A00E0;
     }
     to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #4A00E0, 0 0 80px #4A00E0, 0 0 90px #4A00E0, 0 0 110px #4A00E0;
+      text-shadow: 0 0 40px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #4A00E0, 0 0 80px #4A00E0, 0 0 90px #4A00E0, 0 0 110px #4A00E0;
     }
-  }
-  @keyframes animate{
+  } */
+   @keyframes animate{
     0%{
         transform: translateX(100%);
     }
@@ -211,6 +272,8 @@ h3{
 
   }
  
+
+  
 
   
  
