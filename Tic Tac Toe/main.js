@@ -15,8 +15,8 @@ let cur = x_text
 let spaces = Array(9).fill(null)
 
 const startGame = () =>{
-    boxes.forEach(box =>box.addEventListener('click',boxClicked))
-
+    boxes.forEach(box =>box.addEventListener('click',boxClicked));
+    
 }
 
 // console.log(boxes)
@@ -36,16 +36,23 @@ function boxClicked(e){
 
             // console.log(winblocks)
             winblocks.map(box => boxes[box].style.backgroundColor=winnerIndicator)
-
+            boxes.forEach(box => box.removeEventListener('click', boxClicked))
 
         }
         else if(moves === totalmoves){
             playerText.innerHTML = `DRAW`
+            boxes.forEach(box => box.removeEventListener('click', boxClicked)); // disable clicking after the game ends
+        }
+       
+        else{
+            cur = cur == x_text ? o_text : x_text
+            // computerTurn();
         }
     
     
 
-        cur = cur == x_text ? o_text : x_text
+        
+        
     }
 }
 
@@ -85,39 +92,55 @@ function restartClicked(){
     cur = x_text
 }
 // computerBtn.addEventListener('click',computerTurn)
+computerBtn.addEventListener('click', () => {
+    ComputerGame();
+});
+const ComputerGame = () =>{
+    boxes.forEach(box =>box.addEventListener('click',boxClicked));
+    let computerTimer = setInterval(() => {
+        if (cur === o_text) {
+            computerTurn();
+        }
+        if (playerHasWon() !== false || moves === totalmoves) {
+            clearInterval(computerTimer);
+        }
+    }, 3000);
+};
 
+function computerTurn(){
+    // check if it's the computer's turn (i.e., cur is "O")
+    if(cur === o_text){
+        let availableMoves = [];
+        for(let i = 0; i < spaces.length; i++){
+            if(spaces[i] === null){
+                availableMoves.push(i);
+            }
+        }
+        if(availableMoves.length > 0){
+            const randomIndex = Math.floor(Math.random() * availableMoves.length);
+            const id = availableMoves[randomIndex];
+            spaces[id] = cur;
+            boxes[id].innerText = cur;
+            moves++;
 
-// function computerTurn(){
-//     // check if it's the computer's turn (i.e., cur is "O")
-//     if(cur === o_text){
-//         let availableMoves = [];
-//         for(let i = 0; i < spaces.length; i++){
-//             if(spaces[i] === null){
-//                 availableMoves.push(i);
-//             }
-//         }
-//         if(availableMoves.length > 0){
-//             const randomIndex = Math.floor(Math.random() * availableMoves.length);
-//             const id = availableMoves[randomIndex];
-//             spaces[id] = cur;
-//             boxes[id].innerText = cur;
-//             moves++;
+            if(playerHasWon() !== false){
+                playerText.innerHTML = `${cur} has won !`
+                let winblocks = playerHasWon()
+                winblocks.map(box => boxes[box].style.backgroundColor = winnerIndicator)
+                boxes.forEach(box => box.removeEventListener('click', boxClicked)); // disable clicking after the game ends
+            }
+            else if(moves === totalmoves){
+                playerText.innerHTML = `DRAW`
+                boxes.forEach(box => box.removeEventListener('click', boxClicked)); // disable clicking after the game ends
+            }
+            else {
+                cur = x_text;
+                setTimeout(computerTurn, 500); // wait half a second and call the function again
+            }
+        }
+    }
+}
 
-//             if(playerHasWon() !== false){
-//                 playerText.innerHTML = `${cur} has won !`
-//                 let winblocks = playerHasWon()
-//                 winblocks.map(box => boxes[box].style.backgroundColor = winnerIndicator)
-//                 boxes.forEach(box => box.removeEventListener('click', boxClicked)); // disable clicking after the game ends
-//             }
-//             else if(moves === totalmoves){
-//                 playerText.innerHTML = `DRAW`
-//                 boxes.forEach(box => box.removeEventListener('click', boxClicked)); // disable clicking after the game ends
-//             }
-
-//             cur = x_text;
-//         }
-//     }
-// }
 
 startGame();
 
