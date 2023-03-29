@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 html {
     scroll-behavior: smooth;
 }
@@ -58,6 +59,7 @@ i:hover{
 
 .navbar {
     box-shadow: 0px 4px 8px rgba(17,17,17,0.2);
+    background: linear-gradient(25deg,#ccbacc,#eb3faf);
     
 }
 
@@ -114,7 +116,7 @@ i:hover{
     z-index: -1;
   } */
 #about{
-    background-color: #fff;
+    background: linear-gradient(25deg,#eb3faf,#ccbacc);
 }
   
 .bigtext {
@@ -136,7 +138,7 @@ img {
 
 
 #project {
-    background-color: whitesmoke;
+    background: linear-gradient(25deg,#b1a7ab,#d21a98);
 }
 
 /* .container{
@@ -144,22 +146,108 @@ img {
     
 } */
 
-h3{
-    margin: 10px;
-    font-size: 40px;
-    opacity: 0;
-    visibility: hidden;
+#project .row{
+    display: flex;
+     justify-content: center;
+     align-items: center;
+  
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+    
 }
-.intro p{
+#project .row .col-4{
+    position: relative;
+    display: flex;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+#project .row .col-4 .box{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    transform-style: preserve-3d;
+    transition: 1s ease;
+
+}
+#project .row .col-4:hover .box{
+    transform: rotateY(180deg);
+}
+
+#project .row .col-4 .box .thumbnail{
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+    
+    overflow: hidden;
+}
+#project .row .col-4 .box .thumbnail img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    object-fit: fill;
+}
+#project .row .col-4 .box .intro{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    background: linear-gradient(45deg,#e66395,#cb32c3);
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+   
+}
+#project .row .col-4 .box .intro div{
+    transform-style: preserve-3d;
+    padding: 20px;
+    background: linear-gradient(45deg,#e03476,#982592);
+    transform: translateZ(250px);
+}
+
+#project .row .col-4 .box .intro div h3{
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 1px;
+
+}
+#project .row .col-4 .box .intro div p{
+    color: #fff;
+    font-size: 16px;
+}
+
+
+  
+
+
+
+
+
+
+
+
+/* .intro p{
     font-size: 15px;
     margin: 20px;
     visibility: hidden;
     opacity: 0;
     transition: .5s;
 
-}
+} */
 
-.thumbnail {
+  /* .thumbnail {
     margin: 50px;
     height: 240px;
     box-shadow: 5px 5px 20px black;
@@ -170,8 +258,8 @@ h3{
     width: 450px;
     display: block;
     
-}
-.intro {
+}   */
+/* .intro {
     position: absolute;
     box-sizing: border-box;
     padding: 6px;
@@ -182,10 +270,10 @@ h3{
     color: #e6dede;
     text-align: center;
     z-index: 1;
-    /* background: rgba(17,17,17,0.5); */
-  }
+     background: rgba(17,17,17,0.5);
+  }  */
 
-.thumbnail:hover{
+/* .thumbnail:hover{
     cursor: pointer;
 }
 .thumbnail:hover .intro{
@@ -203,14 +291,14 @@ h3{
 }
 .thumbnail:hover img{
     transform: scale(1.0) rotate(-3deg);
-}
+} */
 
 
 
 
 
 #contact {
-    background-image: radial-gradient(#404040, #202020);
+    background-image: radial-gradient(#404040, #3a1834);
 }
 
 
