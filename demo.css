@@ -59,7 +59,7 @@ i:hover{
 
 .navbar {
     box-shadow: 0px 4px 8px rgba(17,17,17,0.2);
-    background: linear-gradient(25deg,#ccbacc,#eb3faf);
+    background: linear-gradient(25deg,#ccbacc,#dd3feb);
     
 }
 
@@ -116,7 +116,7 @@ i:hover{
     z-index: -1;
   } */
 #about{
-    background: linear-gradient(25deg,#eb3faf,#ccbacc);
+    background: linear-gradient(25deg,#e03feb,#ccbacc);
 }
   
 .bigtext {
@@ -138,7 +138,7 @@ img {
 
 
 #project {
-    background: linear-gradient(25deg,#b1a7ab,#d21a98);
+    background: linear-gradient(25deg,#b1a7ab,#ba1ad2);
 }
 
 /* .container{
@@ -358,6 +358,17 @@ img {
          
     }
 
+  }
+  .profile-photo {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+
+    .profile-photo {
+      width: 50%;
+    }
   }
  
 
